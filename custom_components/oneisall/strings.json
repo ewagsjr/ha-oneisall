@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add Oneisall feeder",
+        "description": "Enter the local network details for your Oneisall pet feeder. You need the device_id and local_key from the Tuya IoT Cloud developer portal - see the README for step-by-step instructions.",
+        "data": {
+          "name": "Name",
+          "host": "IP address",
+          "device_id": "Device ID",
+          "local_key": "Local key",
+          "protocol_version": "Tuya protocol version"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the feeder. Check the IP address, device ID, local key and protocol version.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This feeder is already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "state": {
+          "standby": "Standby",
+          "feeding": "Feeding",
+          "feeding_complete": "Feeding complete"
+        }
+      }
+    }
+  },
+  "services": {
+    "set_raw_dp": {
+      "name": "Set raw DPS value",
+      "description": "Sends a raw Tuya datapoint value directly to the feeder.",
+      "fields": {
+        "entry_id": {
+          "name": "Config entry ID",
+          "description": "The config entry ID of the feeder to target."
+        },
+        "dp": {
+          "name": "Datapoint number",
+          "description": "The DP id as a string, e.g. \"101\"."
+        },
+        "value": {
+          "name": "Value",
+          "description": "The value to send. Type depends on the datapoint."
+        }
+      }
+    }
+  }
+}

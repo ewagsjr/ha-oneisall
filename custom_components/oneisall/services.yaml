@@ -1,0 +1,26 @@
+set_raw_dp:
+  name: Set raw DPS value
+  description: >-
+    Sends a raw Tuya datapoint value directly to the feeder. Intended for
+    reverse-engineering datapoints this integration does not model yet -
+    watch the Raw DPS diagnostic sensor while calling this to see the effect.
+  fields:
+    entry_id:
+      name: Config entry ID
+      description: The config entry ID of the feeder to target.
+      required: true
+      selector:
+        text:
+    dp:
+      name: Datapoint number
+      description: The DP id as a string, e.g. "101".
+      required: true
+      example: "101"
+      selector:
+        text:
+    value:
+      name: Value
+      description: The value to send. Type depends on the datapoint (bool/int/string).
+      required: true
+      selector:
+        text:

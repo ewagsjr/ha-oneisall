@@ -1,0 +1,11 @@
+{
+  "domain": "oneisall",
+  "name": "Oneisall Pet Feeder",
+  "codeowners": ["@ewagsjr"],
+  "config_flow": true,
+  "documentation": "https://github.com/ewagsjr/ha-oneisall",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/ewagsjr/ha-oneisall/issues",
+  "requirements": ["tinytuya==1.14.1"],
+  "version": "0.1.0"
+}
